@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import { EmployeeService } from "../services/EmployeeService";
+import type { Request, Response } from "express";
+import { EmployeeService } from "../services/employee-service";
 
 const employeeService = new EmployeeService();
 
@@ -68,7 +68,7 @@ export async function deleteEmployee(req: Request, res: Response) {
   res.status(204).json(data);
 }
 
-const employeeController = {
+export const employeeController = {
   getEmployee,
   getEmployees,
   createEmployee,
@@ -76,5 +76,3 @@ const employeeController = {
   updateEmployeeStatus,
   deleteEmployee,
 };
-
-export default employeeController;

@@ -1,8 +1,8 @@
 import * as React from "react";
-import "./styles.css";
+import { EmployeeList } from "./components/EmployeeList";
 
 function App(): JSX.Element {
-  return <div className="container">Hi</div>;
+  return <EmployeeList />;
 }
 
 export default App;

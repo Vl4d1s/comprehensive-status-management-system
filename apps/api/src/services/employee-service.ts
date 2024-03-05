@@ -1,5 +1,5 @@
 import supabase from "../config/superbase";
-import { Tables } from "../types/database.types";
+import type { Tables } from "../types/database.types";
 
 export class EmployeeService {
   async getAll() {
