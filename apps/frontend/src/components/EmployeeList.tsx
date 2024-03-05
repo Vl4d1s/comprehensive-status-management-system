@@ -1,4 +1,3 @@
-// src/components/EmployeeList.tsx
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchEmployees } from "../services/employee-service";
