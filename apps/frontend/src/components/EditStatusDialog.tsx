@@ -7,7 +7,6 @@ import Button from "@mui/material/Button";
 import type { SelectChangeEvent } from "@mui/material/Select";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import type { Status } from "../types";
 
@@ -40,7 +39,6 @@ export default function EditStatusDialog({
       <DialogTitle>Edit Employee Status</DialogTitle>
       <DialogContent>
         <FormControl fullWidth>
-          <InputLabel>Status</InputLabel>
           <Select label="Status" onChange={handleStatusChange} value={status}>
             <MenuItem value="Working">Working</MenuItem>
             <MenuItem value="On Vacation">On Vacation</MenuItem>
