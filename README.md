@@ -60,7 +60,12 @@
   - `id` - The unique identifier of the employee to be deleted.
 - **Response**: No content on success; otherwise, an error message.
 
-## Notes
+## DB Design
+![CleanShot 2024-03-05 at 12 28 07@2x](https://github.com/Vl4d1s/comprehensive-status-management-system/assets/42187212/1cbcc48b-b1f3-4fe8-9414-2b63f2bbf241)
 
-- All endpoints return JSON formatted responses.
-- Error handling is implemented, with error messages returned as JSON objects indicating the nature of the error.
+
+# IMPORTANT!
+
+I disabled RLS in Superbase and left the credentials hardcoded in the code. I am fully aware that this is not secure, it is only for your convenience during execution.
+
+Let me know when you finish reviewing, and I will completely delete the table.
