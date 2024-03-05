@@ -1,39 +1,66 @@
-# Turborepo kitchen sink starter
+# Home Exercise - metisdata.io
+## Comprehensive Status Management System
 
-This is an official starter Turborepo with multiple meta-frameworks all working in harmony and sharing packages.
 
-This example also shows how to use [Workspace Configurations](https://turbo.build/repo/docs/core-concepts/monorepos/configuring-workspaces).
+![CleanShot 2024-03-05 at 11 59 45](https://github.com/Vl4d1s/comprehensive-status-management-system/assets/42187212/9067ccbd-9d2c-4d3a-a2b8-2bea75c6d50a)
 
-## Using this example
+## Decisions
 
-Run the following command:
+- Implementation: I decided to implement it as simply as possible, straightforward. Of course, if the application were larger and the amount of data was greater, I would consider using optimizations such as lazy-loading, pagination, memoization, etc.
 
-```sh
-npx create-turbo@latest -e kitchen-sink
-```
+- Stack:
+  - Node.js/Express/TypeScript for the backend. I am aware that you are working with Nest; it's a small gap that I will fill in. It's exactly from the next Udemy course that I took.
+  - React/TypeScript on the client-side generated with Vite.
+  - Data fetching: React Query.
+  - Design System: Mui. Although I know how to work with styled components, Tailwind, and more.
+  - Postgres service: superbase.
 
-## What's inside?
+- Monorepo: I used PNPM workspaces with Turbo template. Please make sure it is installed on your machine. I am proficient in working with both Yarn and npm as well.
 
-This Turborepo includes the following packages and apps:
+## API Endpoints
 
-### Apps and Packages
+### GET /employees
 
-- `api`: an [Express](https://expressjs.com/) server
-- `storefront`: a [Next.js](https://nextjs.org/) app
-- `admin`: a [Vite](https://vitejs.dev/) single page app
-- `blog`: a [Remix](https://remix.run/) blog
-- `@repo/logger`: isomorphic logger (a small wrapper around console.log)
-- `@repo/ui`: a dummy React UI library (which contains a single `<CounterButton>` component)
-- `scripts`: Jest and ESLint configurations
-- `@repo/typescript-config`: tsconfig.json's used throughout the monorepo
+- **Description**: Retrieve a list of all employees.
+- **Response**: A list of employee records on success; otherwise, an error message.
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
+### GET /employees/:id
 
-### Utilities
+- **Description**: Retrieve a single employee record by its unique ID.
+- **Parameters**: 
+  - `id` - The unique identifier of the employee.
+- **Response**: The employee record on success; otherwise, an error message.
 
-This Turborepo has some additional tools already setup for you:
+### POST /employees
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Jest](https://jestjs.io) test runner for all things JavaScript
-- [Prettier](https://prettier.io) for code formatting
+- **Description**: Create a new employee record.
+- **Body**: A JSON object containing the new employee's details.
+- **Response**: The created employee record on success; otherwise, an error message.
+
+### PUT /employees/:id
+
+- **Description**: Update an existing employee record by its unique ID.
+- **Parameters**: 
+  - `id` - The unique identifier of the employee to update.
+- **Body**: A JSON object with the employee's updated details.
+- **Response**: The updated employee record on success; otherwise, an error message.
+
+### PATCH /employees/:id/status
+
+- **Description**: Update the status of an existing employee by its unique ID.
+- **Parameters**: 
+  - `id` - The unique identifier of the employee whose status is to be updated.
+- **Body**: A JSON object containing the new status of the employee.
+- **Response**: The updated employee record on success; otherwise, an error message.
+
+### DELETE /employees/:id
+
+- **Description**: Delete an employee record by its unique ID.
+- **Parameters**: 
+  - `id` - The unique identifier of the employee to be deleted.
+- **Response**: No content on success; otherwise, an error message.
+
+## Notes
+
+- All endpoints return JSON formatted responses.
+- Error handling is implemented, with error messages returned as JSON objects indicating the nature of the error.
